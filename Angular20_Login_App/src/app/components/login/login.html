@@ -1,0 +1,69 @@
+<div class="auth-container">
+  <div class="auth-card animate-slide">
+
+    <h2 class="text-center mb-3">
+      {{ isLogin ? 'Login' : 'User Registration' }}
+    </h2>
+
+    <!-- LOGIN FORM -->
+    @if(isLogin) {
+    <form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" placeholder="Username" formControlName="userName">
+        <label>UserName</label>
+      </div>
+
+      <div class="form-floating mb-4">
+        <input type="password" class="form-control" placeholder="Password" formControlName="password">
+        <label>Password</label>
+      </div>
+
+      <button class="btn btn-primary w-100 btn-lg animate-btn" type="submit">
+        Login
+      </button>
+    </form>
+    }
+
+
+    <!-- REGISTRATION FORM -->
+    @if(!isLogin){
+    <form [formGroup]="registerForm" (ngSubmit)="submitRegister()">
+
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" placeholder="Username" formControlName="userName">
+        <label>UserName</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" placeholder="Email" formControlName="email">
+        <label>Email</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input type="password" class="form-control" placeholder="Password" formControlName="password">
+        <label>Password</label>
+      </div>
+
+      <div class="form-floating mb-4">
+        <input type="text" class="form-control" placeholder="Contact No" formControlName="contactNo">
+        <label>Contact Number</label>
+      </div>
+
+      <button class="btn btn-success w-100 btn-lg animate-btn" type="submit">
+        Register
+      </button>
+    </form>
+    }
+
+
+    <!-- TOGGLE -->
+    <p class="text-center mt-4 toggle-text">
+      {{ isLogin ? 'New user?' : 'Already have an account?' }}
+      <span (click)="toggleForm()">
+        {{ isLogin ? 'Register here' : 'Login here' }}
+      </span>
+    </p>
+
+  </div>
+</div>

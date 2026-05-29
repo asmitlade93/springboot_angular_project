@@ -1,0 +1,98 @@
+<div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-dark border-end sidebar" id="sidebar-wrapper">
+        <div class="sidebar-heading text-white text-center py-4 fs-5 fw-bold">
+            <i class="bi bi-speedometer2 me-2"></i>Dashboard
+        </div>
+
+        <div class="list-group list-group-flush">
+            <a class="list-group-item list-group-item-action bg-dark text-white">
+                <i class="bi bi-house-door me-2"></i>Home
+            </a>
+            <a class="list-group-item list-group-item-action bg-dark text-white">
+                <i class="bi bi-people me-2"></i>Users
+            </a>
+            <a class="list-group-item list-group-item-action bg-dark text-white">
+                <i class="bi bi-bar-chart me-2"></i>Reports
+            </a>
+            <a class="list-group-item list-group-item-action bg-dark text-white">
+                <i class="bi bi-gear me-2"></i>Settings
+            </a>
+        </div>
+    </div>
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+        <!-- Top Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom px-3 shadow-sm">
+            <button class="btn btn-outline-primary" (click)="toggleSidebar()">
+                <i class="bi bi-list"></i>
+            </button>
+
+            <div class="ms-auto d-flex align-items-center">
+
+                <!-- Profile Dropdown -->
+                <div class="dropdown">
+                    <a class="d-flex align-items-center text-decoration-none dropdown-toggle" data-bs-toggle="dropdown">
+                        <i class="bi bi-person-circle fs-4 me-2 text-primary"></i>
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-menu-end shadow">
+                        <li>
+                            <a class="dropdown-item">
+                                <i class="bi bi-person me-2"></i>Your Profile
+                            </a>
+                        </li>
+                        <li>
+                            <span class="dropdown-item text-muted">
+                                <i class="bi bi-shield-lock me-2"></i>Role: Admin
+                            </span>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <a class="dropdown-item text-danger">
+                                <i class="bi bi-box-arrow-right me-2"></i>Logout
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="container-fluid p-4">
+            <h3 class="fw-bold">Welcome to Dashboard</h3>
+            <p class="text-muted">This is your main content area.</p>
+
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="card shadow-sm p-3">
+                        <h5><i class="bi bi-people me-2 text-primary"></i>Users</h5>
+                        <p>Manage system users</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card shadow-sm p-3">
+                        <h5><i class="bi bi-bar-chart me-2 text-success"></i>Reports</h5>
+                        <p>View analytics</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card shadow-sm p-3">
+                        <h5><i class="bi bi-gear me-2 text-warning"></i>Settings</h5>
+                        <p>Configure system</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

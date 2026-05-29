@@ -1,0 +1,28 @@
+# Angular specific
+Angular20_Login_App/dist/
+Angular20_Login_App/out-tsc/
+Angular20_Login_App/tmp/
+Angular20_Login_App/coverage/
+Angular20_Login_App/e2e/test-output/
+Angular20_Login_App/.angular/
+.angular/
+
+# Node modules and dependency files
+Angular20_Login_App/node_modules/
+/package-lock.json
+/yarn.lock
+
+# Environment files
+/.env
+
+# Angular CLI and build artefacts
+Angular20_Login_App/.angular-cli.json
+Angular20_Login_App/.ng/
+
+# TypeScript cache
+Angular20_Login_App/*.tsbuildinfo
+
+# Logs
+Angular20_Login_App/npm-debug.log*
+Angular20_Login_App/yarn-debug.log*
+Angular20_Login_App/yarn-error.log*
