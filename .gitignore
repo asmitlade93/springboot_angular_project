@@ -9,6 +9,7 @@ Angular20_Login_App/.angular/
 
 # Node modules and dependency files
 Angular20_Login_App/node_modules/
+
 /package-lock.json
 /yarn.lock
 
