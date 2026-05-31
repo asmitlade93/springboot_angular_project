@@ -5,7 +5,7 @@ pipeline {
 
         stage('Build Backend') {
             steps {
-                dir('backend') {
+                dir('Java21_SpringBoot_App') {
                     sh 'mvn clean package -DskipTests'
                 }
             }
