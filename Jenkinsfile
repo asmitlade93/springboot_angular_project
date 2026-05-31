@@ -12,7 +12,7 @@ pipeline {
         }
          stage('Build Docker Image') {
             steps {
-                dir('backend') {
+                dir('Java21_SpringBoot_App/demo_app/demo') {
                     sh '''
                     docker build \
                     -t springboot-app:${BUILD_NUMBER} .
