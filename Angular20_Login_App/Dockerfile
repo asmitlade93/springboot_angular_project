@@ -1,6 +1,6 @@
 FROM node:20-alpine AS build
 
-WORKDIR /scr/app
+WORKDIR /app
 
 COPY . .
 
