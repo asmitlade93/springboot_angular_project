@@ -16,6 +16,15 @@ pipeline {
                 sh 'find Angular20_Login_App/dist'
             }
         }
+        stage('Check Frontend Files') {
+            steps {
+                dir('Angular20_Login_App') {
+                    sh 'pwd'
+                    sh 'ls -la'
+                }
+            }
+        }
+      
         stage('Build Frontend Docker Image') {
             steps {
                 dir('Angular20_Login_App') {
@@ -30,6 +39,15 @@ pipeline {
             steps {
                 dir('Java21_SpringBoot_App/demo_app/demo') {
                     sh 'mvn clean package -DskipTests'
+                }
+            }
+        }
+
+        stage('Check Backend Files') {
+            steps {
+                dir('Java21_SpringBoot_App/demo_app/demo') {
+                    sh 'pwd'
+                    sh 'ls -la'
                 }
             }
         }
