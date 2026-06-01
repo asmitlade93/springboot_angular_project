@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Build Frontend Docker Image') {
             steps {
-                dir('frontend') {
+                dir('Angular20_Login_App') {
                     sh '''
                     docker build \
                     -t angular-app:${BUILD_NUMBER} .
