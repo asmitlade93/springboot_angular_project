@@ -11,7 +11,7 @@ import { ApiResponse } from '../interfaces/ApiResponse';
 })
 export class LoginService {
 
-  endpointURL: string = "http://localhost:8080/";
+  endpointURL: string = "/api/";
 
   http = inject(HttpClient);
 
