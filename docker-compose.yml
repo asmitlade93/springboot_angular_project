@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+
+    mysql:
+        image: mysql:8
+        container_name: mysql8
+        restart: unless-stopped
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: spring_security
+        ports:
+            - "3306:3306"
+        volumes:
+            - mysql_data:/var/lib/mysql
+        networks:
+            - app-network
+
+    springboot:
+        image: springboot-app:7
+        container_name: springboot-app
+        restart: unless-stopped
+        depends_on:
+            - mysql
+        ports:
+            - "9090:9090"
+        environment:
+            SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/spring_security?useSSL=false&serverTimezone=UTC
+            SPRING_DATASOURCE_USERNAME: root
+            SPRING_DATASOURCE_PASSWORD: root
+        networks:
+            - app-network
+
+    angular:
+        image: angular-app:7
+        container_name: angular-app
+        restart: unless-stopped
+        depends_on:
+            - springboot
+        ports:
+            - "80:80"
+        networks:
+            - app-network
+
+volumes:
+    mysql_data:
+
+networks:
+    app-network:
+        driver: bridge
