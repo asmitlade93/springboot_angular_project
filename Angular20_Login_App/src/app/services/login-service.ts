@@ -11,15 +11,15 @@ import { ApiResponse } from '../interfaces/ApiResponse';
 })
 export class LoginService {
 
-  endpointURL: string = "/api/";
+  endpointURL: string = "/api";
 
   http = inject(HttpClient);
 
   login(login: LoginRequest): Observable<ApiResponse> {
-    return this.http.post<ApiResponse>(this.endpointURL + "auth/login", login);
+    return this.http.post<ApiResponse>(this.endpointURL + "/auth/login", login);
   }
 
   userRegister(userDetails: UserRegistration) {
-    return this.http.post(this.endpointURL + "auth/register", userDetails);
+    return this.http.post(this.endpointURL + "/auth/register", userDetails);
   }
 }
