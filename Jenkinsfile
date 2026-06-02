@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+    tools {
+        nodejs 'NodeJs24'
+    }
     stages {
 
         stage('Build Frontend') {
